@@ -8,4 +8,10 @@ class ArtistsController < ApplicationController
     @artist = Artist.find_by_slug(params[:slug])
     erb :'artist/show' 
   end
+
+  delete '/artists/:slug/delete' do
+    @artist = Artist.find_by_slug(params[:slug])
+    @artist.delete 
+    redirect '/artists' 
+  end
 end
