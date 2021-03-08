@@ -17,8 +17,6 @@ class LibraryParser
     song   = song_match   && song_match[1]
     genre  = genre_match  && genre_match[1]
     
-    song = song.split(' ').map {|word| word.capitalize!}
-    
     [artist, song, genre]
   end
 

@@ -7,9 +7,7 @@ module Slugs
   
   module ClassMethods
     def find_by_slug(slug)
-      name = slug.gsub(/-/, ' ')
-      name = name.split(' ').map {|word| word.capitalize!}
-      self.find_by(name: name.join(' '))
+      self.all.find{ |instance| instance.slug == slug }
     end
   end
 end

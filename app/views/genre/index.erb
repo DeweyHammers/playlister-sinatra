@@ -1,0 +1,7 @@
+<h1>Genres Home Page</h1>
+<hr style='width:15%; text-align:left; margin: 0 auto 0 0;'>
+<% @genres.each do |genre| %>
+  <h2><%= genre.name %></h2>
+  <a href='/genres/<%= genre.slug %>'>Show More</a>
+  <hr style='width:15%; text-align:left; margin: 0 auto 0 0;'>
+<% end %>
